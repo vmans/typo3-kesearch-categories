@@ -1,0 +1,64 @@
+{
+  "name": "kpurrmann/typo3-kesearch-categories",
+  "type": "typo3-cms-extension",
+  "description": "Extension provides connection between ke_search and TYPO3 categories.",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "ke_search",
+    "categories"
+  ],
+  "homepage": "http://www.purrmann-websolutions.de",
+  "authors": [
+    {
+      "name": "Kevin Purrmann",
+      "email": "entwicklung@purrmann-websolutions.de",
+      "role": "Developer",
+      "homepage": "http://www.purrmann-websolutions.de"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "require": {
+    "typo3/cms-core": "~6.2.14|>=7.4.0,<8.0"
+  },
+  "require-dev": {
+    "namelesscoder/typo3-repository-client": "1.1.x-dev",
+    "mikey179/vfsStream": "1.4.*@dev",
+    "phpunit/phpunit": "~4.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pws\\KesearchCategories\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pws\\KesearchCategories\\Tests\\": "Tests",
+      "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
+      "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
+    }
+  },
+  "replace": {
+    "ext_scaffold": "self.version",
+    "typo3-ter/ext-scaffold": "self.version"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/kesearch_categories ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/kesearch_categories"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  }
+}
