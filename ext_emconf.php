@@ -1,11 +1,11 @@
 <?php
 $EM_CONF[$_EXTKEY] = array (
-  'title' => 'Extension skeleton for TYPO3 7',
+  'title' => 'Categories for ke_search',
   'description' => 'Description for ext',
   'category' => 'Example Extensions',
-  'author' => 'Helmut Hummel',
-  'author_email' => 'info@helhum.io',
-  'author_company' => 'helhum.io',
+  'author' => 'Kevin Purrmann',
+  'author_email' => 'entwicklung@purrmann-websolutions.de',
+  'author_company' => 'Purrmann Websolutions',
   'shy' => '',
   'priority' => '',
   'module' => '',
@@ -21,7 +21,7 @@ $EM_CONF[$_EXTKEY] = array (
   array (
     'depends' => 
     array (
-      'typo3' => '7.5.0-7.99.99',
+      'typo3' => '7.0.0-7.99.99',
     ),
     'conflicts' => 
     array (
