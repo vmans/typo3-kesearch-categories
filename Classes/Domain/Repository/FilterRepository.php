@@ -21,7 +21,7 @@ class FilterRepository extends Repository
     public function initializeObject()
     {
         /* @var $querySettings QuerySettingsInterface */
-        $querySettings = $this->objectManager->get(QuerySettingsInterface::class);
+        $querySettings = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface');
         $querySettings->setRespectStoragePage(false);
         $this->setDefaultQuerySettings($querySettings);
     }
