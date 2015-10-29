@@ -49,6 +49,7 @@ class IndexPagesHookTest extends UnitTestCase
         $category2 = $this->getMock('Pws\KesearchCategories\Domain\Model\Category', array(), array(), '', false);
         $category2->expects($this->once())->method('getFilterOptionTag')->willReturn('secondtitle');
 
+
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($category1);
         $objectStorage->attach($category2);
