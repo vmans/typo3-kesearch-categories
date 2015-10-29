@@ -10,7 +10,7 @@ env:
   - TYPO3_VERSION="7.5.0"
   - TYPO3_VERSION="7.4.0"
   - TYPO3_VERSION="^7.0"
-  - TYPO3_VERSION="~6.2"
+  - TYPO3_VERSION="~6.2.14"
 
 matrix:
   exclude:
