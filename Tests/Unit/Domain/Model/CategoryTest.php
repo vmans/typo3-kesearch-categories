@@ -32,7 +32,7 @@ class CategoryTest extends UnitTestCase
      */
     public function testIfCategoryImplementsInterface()
     {
-        $this->assertInstanceOf(FilterOptionsInterface::class, $this->fixture);
+        $this->assertInstanceOf('Pws\KesearchCategories\Domain\Model\FilterOptionsInterface', $this->fixture);
     }
 
     /**
