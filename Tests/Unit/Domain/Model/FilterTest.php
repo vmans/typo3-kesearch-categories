@@ -26,7 +26,7 @@ class FilterTest extends UnitTestCase
      */
     public function testConsctructorCreatesEmptyObjectStorages()
     {
-        $this->assertInstanceOf(ObjectStorage::class, $this->fixture->getCategories());
+        $this->assertInstanceOf('TYPO3\CMS\Extbase\Persistence\ObjectStorage', $this->fixture->getCategories());
     }
 
     /**
