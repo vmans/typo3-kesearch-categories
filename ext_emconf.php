@@ -20,8 +20,8 @@ $EM_CONF[$_EXTKEY] = array(
         array(
             'depends' =>
                 array(
-                    'typo3' => '6.2.0-7.5.0',
-                    'ke_search' => '1.10'
+                    'typo3' => '6.2.0-7.4.0',
+                    'ke_search' => '1.10.2'
                 ),
             'conflicts' =>
                 array(),
@@ -32,14 +32,14 @@ $EM_CONF[$_EXTKEY] = array(
         array(
             'psr-4' =>
                 array(
-                    'Pws\\KesearchCategories\\' => 'Classes',
+                    'Pws\\KesearchCategories\\' => 'Classes/',
                 ),
         ),
     'autoload-dev' =>
         array(
             'psr-4' =>
                 array(
-                    'Pws\\KesearchCategories\\Tests\\' => 'Tests',
+                    'Pws\\KesearchCategories\\Tests\\' => 'Tests/',
                 ),
         ),
 );

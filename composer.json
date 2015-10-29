@@ -35,7 +35,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Pws\\KesearchCategories\\": "Classes"
+      "Pws\\KesearchCategories\\": "Classes/"
     }
   },
   "autoload-dev": {
@@ -47,8 +47,8 @@
   },
   "replace": {
     "ke-search": "self.version",
-    "kesearch_categories": "self.version",
-    "typo3-ter/kesearch_categories": "self.version",
+    "kesearch-categories": "self.version",
+    "typo3-ter/kesearch-categories": "self.version",
     "typo3-ter/ke-search": "self.version"
   },
   "config": {
