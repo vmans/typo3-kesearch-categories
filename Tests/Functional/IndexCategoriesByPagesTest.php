@@ -25,7 +25,7 @@ class IndexCategoriesByPagesTest extends FunctionalTestCase
     /**
      * @throws \TYPO3\CMS\Core\Tests\Exception
      */
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
         $this->importDataSet(__DIR__ . '/Fixtures/Database/pages.xml');
