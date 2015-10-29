@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+    <pages>
+        <uid>1</uid>
+        <pid>0</pid>
+        <title>Test</title>
+        <doktype>1</doktype>
+        <deleted>0</deleted>
+        <perms_everybody>15</perms_everybody>
+        <categories>2</categories>
+    </pages>
+    <pages>
+        <uid>2</uid>
+        <pid>1</pid>
+        <title>Config</title>
+        <doktype>254</doktype>
+        <deleted>0</deleted>
+        <perms_everybody>15</perms_everybody>
+    </pages>
+</dataset>
