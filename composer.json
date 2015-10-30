@@ -46,10 +46,8 @@
     }
   },
   "replace": {
-    "ke-search": "self.version",
     "kesearch-categories": "self.version",
-    "typo3-ter/kesearch-categories": "self.version",
-    "typo3-ter/ke-search": "self.version"
+    "typo3-ter/kesearch-categories": "self.version"
   },
   "config": {
     "vendor-dir": ".Build/vendor",
