@@ -46,10 +46,7 @@
     }
   },
   "replace": {
-    "kesearch_categories": "self.version",
-    "kpurrmann/typo3-kesearch-categories": "self.version",
-    "ke_search": "self.version",
-    "typo3-ter/ke-search": "self.version"
+    "kesearch_categories": "self.version"
   },
   "config": {
     "vendor-dir": ".Build/vendor",
