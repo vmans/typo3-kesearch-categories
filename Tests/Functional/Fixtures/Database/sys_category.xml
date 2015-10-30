@@ -4,10 +4,12 @@
         <uid>1</uid>
         <pid>1</pid>
         <title>first category</title>
+        <l10n_diffsource></l10n_diffsource>
     </sys_category>
     <sys_category>
         <uid>2</uid>
         <pid>1</pid>
         <title>second category</title>
+        <l10n_diffsource></l10n_diffsource>
     </sys_category>
 </dataset>
