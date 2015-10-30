@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+    <tx_kesearch_indexerconfig>
+        <uid>1</uid>
+        <pid>2</pid>
+        <deleted>0</deleted>
+        <hidden>0</hidden>
+        <title>Page Indexer</title>
+        <type>page</type>
+        <storagepid>2</storagepid>
+        <targetpid>NULL</targetpid>
+        <startingpoints_recursive>1</startingpoints_recursive>
+        <fileext>pdf,ppt,doc,xls</fileext>
+        <commenttypes>pages</commenttypes>
+    </tx_kesearch_indexerconfig>
+</dataset>
