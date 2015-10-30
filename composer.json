@@ -26,7 +26,7 @@
   "license": "GPL-2.0+",
   "require": {
     "typo3/cms-core": "~6.2.14|>=7.4.0,<8.0",
-    "typo3-ter/ke-search": "*"
+    "ke-search": "*"
   },
   "require-dev": {
     "namelesscoder/typo3-repository-client": "1.1.x-dev",
