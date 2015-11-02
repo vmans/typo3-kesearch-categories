@@ -25,8 +25,7 @@
   ],
   "license": "GPL-2.0+",
   "require": {
-    "typo3/cms-core": "~6.2.14|>=7.4.0,<7.5",
-    "typo3-ter/ke-search": "~1.10"
+    "typo3/cms-core": "~6.2.14|>=7.4.0,<7.5"
   },
   "require-dev": {
     "namelesscoder/typo3-repository-client": "1.1.x-dev",
@@ -46,8 +45,7 @@
     }
   },
   "replace": {
-    "kesearch_categories": "self.version",
-    "typo3-ter/ke-search": "self.version"
+    "kesearch_categories": "self.version"
   },
   "config": {
     "vendor-dir": ".Build/vendor",
