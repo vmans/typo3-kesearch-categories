@@ -46,7 +46,8 @@
     }
   },
   "replace": {
-    "kesearch_categories": "self.version"
+    "kesearch_categories": "self.version",
+    "ke_search": "self.version"
   },
   "config": {
     "vendor-dir": ".Build/vendor",
