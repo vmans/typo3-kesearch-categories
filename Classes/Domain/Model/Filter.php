@@ -27,6 +27,11 @@ class Filter extends AbstractDomainObject
     protected $categories;
 
     /**
+     * @var boolean
+     */
+    protected $useSubcategories;
+
+    /**
      * Filter constructor.
      */
     public function __construct()
@@ -83,4 +88,21 @@ class Filter extends AbstractDomainObject
         $this->categories->detach($category);
     }
 
+    /**
+     * @return boolean
+     */
+    public function isUseSubcategories()
+    {
+        return $this->useSubcategories;
+    }
+
+    /**
+     * @param boolean $useSubcategories
+     */
+    public function setUseSubcategories($useSubcategories)
+    {
+        $this->useSubcategories = $useSubcategories;
+    }
+
+    
 }

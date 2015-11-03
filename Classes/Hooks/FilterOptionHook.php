@@ -11,9 +11,8 @@ namespace Pws\KesearchCategories\Hooks;
 
 use Pws\KesearchCategories\Domain\Model\Category;
 use Pws\KesearchCategories\Domain\Repository\FilterRepository;
-use TYPO3\CMS\Core\Category\CategoryRegistry;
-use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
-use TYPO3\CMS\Frontend\Category\Collection\CategoryCollection;
+use Pws\KesearchCategories\Domain\Repository\CategoryRepository;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class FilterOptionHook extends AbstractHook
 {
@@ -23,6 +22,12 @@ class FilterOptionHook extends AbstractHook
      * @inject
      */
     protected $filterRepository;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository
+     * @inject
+     */
+    protected $categoryRepository;
 
     /**
      * @param array $filters
@@ -36,7 +41,7 @@ class FilterOptionHook extends AbstractHook
                     unset($filters[$key]['options']);
                     /* @var $category \Pws\KesearchCategories\Domain\Model\Category */
                     foreach ($categories as $category) {
-                        $filters[$key]['options'] = $this->getFilterOptionByCategory($category);
+                        $filters[$key]['options'][$category->getUid()] = $this->getFilterOptionByCategory($category);
                     }
                 }
 
@@ -52,11 +57,9 @@ class FilterOptionHook extends AbstractHook
     protected function getFilterOptionByCategory(Category $category)
     {
         return array(
-            $category->getUid() => array(
-                'uid' => $category->getUid(),
-                'title' => $category->getTitle(),
-                'tag' => $category->getFilterOptionTag()
-            )
+            'uid' => $category->getUid(),
+            'title' => $category->getTitle(),
+            'tag' => $category->getFilterOptionTag()
         );
     }
 
@@ -71,10 +74,34 @@ class FilterOptionHook extends AbstractHook
             && $filterObject->isUseCategoriesForFilterOptions()
             && ($categories = $filterObject->getCategories())
         ) {
+
+            if ($filterObject->isUseSubcategories()) {
+                $categories = $this->getChildCategories($categories);
+            }
+
             return $categories;
         }
 
         return false;
+    }
+
+    /**
+     * @param ObjectStorage $categories
+     * @return ObjectStorage
+     */
+    protected function getChildCategories(ObjectStorage $categories)
+    {
+        $childCategories = new ObjectStorage();
+        foreach ($categories as $category) {
+            if (($children = $this->getCatgeoryRepository()->findByParent($category))) {
+                while ($children->current()) {
+                    $childCategories->attach($children->current());
+                    $children->next();
+                }
+            }
+        }
+
+        return $childCategories;
     }
 
     /**
@@ -89,6 +116,18 @@ class FilterOptionHook extends AbstractHook
         }
 
         return $this->filterRepository;
+    }
+
+    /**
+     * @return CategoryRepository
+     */
+    public function getCatgeoryRepository()
+    {
+        if (is_null($this->categoryRepository)) {
+            $this->categoryRepository = $this->getObjectManager()->get('Pws\\KesearchCategories\\Domain\\Repository\\CategoryRepository');
+        }
+
+        return $this->categoryRepository;
     }
 
 }

@@ -45,6 +45,14 @@ $tempColumns = array(
             'maxitems' => 99,
         )
     ),
+    'use_subcategories' => array(
+        'exclude' => 1,
+        'displayCond' => 'FIELD:use_categories_for_filter_options:=:1',
+        'label' => 'use_subcategories',
+        'config' => array(
+            'type' => 'check',
+        )
+    ),
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
@@ -54,7 +62,7 @@ $tempColumns = array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
     'tx_kesearch_filters',
-    'use_categories_for_filter_options, categories'
+    'use_categories_for_filter_options, categories, use_subcategories'
 );
 
 $GLOBALS['TCA']['tx_kesearch_filters']['ctrl']['requestUpdate'] .= ',use_categories_for_filter_options';
