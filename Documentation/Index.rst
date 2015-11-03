@@ -13,47 +13,47 @@ EXT: Categories for ke_search
 =================
 
 :Extension key:
-        kesearch_categories
+            kesearch_categories
 
 :Version:
-        |version|
+            |version|
 
 :Language:
-        en
+            en
 
 :Description:
-        Extension provides categories for ke_search-filteroptions. Categories are used as ke_search-indexable tags for pages and news.
+            Extension provides categories for ke_search-filteroptions. Categories are used as ke_search-indexable tags for pages and news.
 
 :Keywords:
-        TYPO3 kesearch ke_search categories
+            TYPO3 kesearch ke_search categories
 
 :Copyright:
-        2015
+            2015
 
 :Author:
-        Kevin Purrmann
+            Kevin Purrmann
 
 :Created:
-        2015-11-03
+            2015-11-03
 
 :Changed:
-        2015-11-03
+            2015-11-03
 
 :Email:
-        entwicklung@purrmann-websolutions.de
+            entwicklung@purrmann-websolutions.de
 
 :License:
-        GNU General Public License available from `www.gnu.org/licenses/gpl-2.0.html <http://www.gnu.org/licenses/gpl-2.0.html>`_
+            GNU General Public License available from `www.gnu.org/licenses/gpl-2.0.html <http://www.gnu.org/licenses/gpl-2.0.html>`_
 
 :Rendered:
-        |today|
+            |today|
 
 **Table of Contents**
 
 .. toctree::
-    :maxdepth: 5
-    :titlesonly:
-    :glob:
+:maxdepth: 5
+        :titlesonly:
+        :glob:
 
-    Screenshots/Index
-    Issues/Index
+        Screenshots/Index
+        Issues/Index
