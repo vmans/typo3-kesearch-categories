@@ -15,22 +15,16 @@
 namespace Pws\KesearchCategories\Domain\Model;
 
 
-use Pws\KesearchCategories\Domain\Model\Category;
 use TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Class maps table tx_kesearch_filters
+ * Class maps table pages
  *
  * @package Pws\KesearchCategories\Domain\Model
  */
-class Filter extends AbstractDomainObject
+class Page extends AbstractDomainObject
 {
-
-    /**
-     * @var boolean
-     */
-    protected $useCategoriesForFilterOptions;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<Pws\KesearchCategories\Domain\Model\Category>
@@ -38,33 +32,11 @@ class Filter extends AbstractDomainObject
     protected $categories;
 
     /**
-     * @var boolean
-     */
-    protected $useSubcategories;
-
-    /**
-     * Filter constructor.
+     * Page constructor.
      */
     public function __construct()
     {
         $this->categories = new ObjectStorage();
-    }
-
-
-    /**
-     * @return boolean
-     */
-    public function isUseCategoriesForFilterOptions()
-    {
-        return $this->useCategoriesForFilterOptions;
-    }
-
-    /**
-     * @param boolean $useCategoriesForFilterOptions
-     */
-    public function setUseCategoriesForFilterOptions($useCategoriesForFilterOptions)
-    {
-        $this->useCategoriesForFilterOptions = $useCategoriesForFilterOptions;
     }
 
     /**
@@ -97,22 +69,6 @@ class Filter extends AbstractDomainObject
     public function removeCategory(Category $category)
     {
         $this->categories->detach($category);
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isUseSubcategories()
-    {
-        return $this->useSubcategories;
-    }
-
-    /**
-     * @param boolean $useSubcategories
-     */
-    public function setUseSubcategories($useSubcategories)
-    {
-        $this->useSubcategories = $useSubcategories;
     }
 
 

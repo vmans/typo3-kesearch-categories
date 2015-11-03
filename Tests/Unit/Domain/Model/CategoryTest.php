@@ -36,6 +36,42 @@ class CategoryTest extends UnitTestCase
     }
 
     /**
+     * @test
+     */
+    public function testGetFilterOptionTag()
+    {
+        $fixture = $this->getMock(
+            'Pws\KesearchCategories\Domain\Model\Category',
+            array('getUid', 'getTitle'),
+            array(),
+            '',
+            false
+        );
+        $fixture->expects($this->once())->method('getUid')->willReturn(1);
+        $fixture->expects($this->once())->method('getTitle')->willReturn('title');
+
+        $this->assertEquals('1title', $fixture->getFilterOptionTag());
+    }
+
+    /**
+     * @test
+     */
+    public function testGetFilterOptionTagRemovesSpecialChars()
+    {
+        $fixture = $this->getMock(
+            'Pws\KesearchCategories\Domain\Model\Category',
+            array('getUid', 'getTitle'),
+            array(),
+            '',
+            false
+        );
+        $fixture->expects($this->once())->method('getUid')->willReturn(1);
+        $fixture->expects($this->once())->method('getTitle')->willReturn('check-spécial-chars-äöüä without spaces');
+
+        $this->assertEquals('1checkspcialcharswithoutspaces', $fixture->getFilterOptionTag());
+    }
+
+    /**
      * Set up fixture
      */
     protected function setUp()

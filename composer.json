@@ -25,8 +25,7 @@
   ],
   "license": "GPL-2.0+",
   "require": {
-    "typo3/cms-core": "~6.2.14|>=7.4.0,<8.0",
-    "typo3-ter/ke-search": "*"
+    "typo3/cms-core": "~6.2.14|>=7.4.0,<7.5"
   },
   "require-dev": {
     "namelesscoder/typo3-repository-client": "1.1.x-dev",
@@ -35,7 +34,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Pws\\KesearchCategories\\": "Classes"
+      "Pws\\KesearchCategories\\": "Classes/"
     }
   },
   "autoload-dev": {
@@ -46,8 +45,7 @@
     }
   },
   "replace": {
-    "kesearch_categories": "self.version",
-    "typo3-ter/kesearch_categories": "self.version"
+    "kesearch_categories": "self.version"
   },
   "config": {
     "vendor-dir": ".Build/vendor",

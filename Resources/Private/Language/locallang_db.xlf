@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-05-22T10:19:33Z"
+          product-name="kesearch_categories">
+        <header/>
+        <body>
+            <trans-unit id="tx_kesearch_filters.use_categories_for_filter_options">
+                <source>Use categories for filter options</source>
+            </trans-unit>
+            <trans-unit id="tx_kesearch_filters.categories">
+                <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="tx_kesearch_filters.use_subcategories">
+                <source>Use subcategories as filter options</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

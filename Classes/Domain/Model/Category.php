@@ -16,6 +16,7 @@ namespace Pws\KesearchCategories\Domain\Model;
  */
 
 
+use TYPO3\CMS\Core\Charset\CharsetConverter;
 use TYPO3\CMS\Extbase\Domain\Model\Category as BaseCategory;
 
 /**
@@ -33,6 +34,6 @@ class Category extends BaseCategory implements FilterOptionsInterface
      */
     public function getFilterOptionTag()
     {
-        return $this->getUid() . strtolower($this->getTitle());
+        return $this->getUid() . strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $this->getTitle()));
     }
 }

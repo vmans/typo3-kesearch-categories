@@ -1,4 +1,7 @@
 <?php
+
+namespace Pws\KesearchCategories\Domain\Repository;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -12,14 +15,13 @@
  * The TYPO3 project - inspiring people to share!
  */
 
-namespace Pws\KesearchCategories\Domain\Repository;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Class FilterRepository
- *
+ * Class PageRepository
  * @package Pws\KesearchCategories\Domain\Repository
  */
-class FilterRepository extends AbstractDisrespectStoragePageRepository
+class PageRepository extends AbstractDisrespectStoragePageRepository
 {
 
 }
