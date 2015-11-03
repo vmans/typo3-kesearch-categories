@@ -1,0 +1,5 @@
+.. |add-filter|      image:: ../Images/add-filter.png
+.. :align: center
+.. :border: 0
+.. :name: add-filter
+.. :vspace: 50
