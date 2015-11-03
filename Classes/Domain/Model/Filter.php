@@ -1,9 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kpurrmann
- * Date: 27.10.15
- * Time: 16:14
+/*
+ * This file is part of the TYPO3 CMS project.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * The TYPO3 project - inspiring people to share!
  */
 
 namespace Pws\KesearchCategories\Domain\Model;
@@ -13,6 +19,11 @@ use Pws\KesearchCategories\Domain\Model\Category;
 use TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
+/**
+ * Class maps table tx_kesearch_filters
+ *
+ * @package Pws\KesearchCategories\Domain\Model
+ */
 class Filter extends AbstractDomainObject
 {
 
@@ -104,5 +115,5 @@ class Filter extends AbstractDomainObject
         $this->useSubcategories = $useSubcategories;
     }
 
-    
+
 }
