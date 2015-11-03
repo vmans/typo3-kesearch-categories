@@ -6,6 +6,12 @@ config.tx_extbase.persistence.classes {
         }
     }
 
+    Pws\KesearchCategories\Domain\Model\Filter {
+        mapping {
+            tableName = tx_kesearch_filters
+        }
+    }
+
     Pws\KesearchCategories\Domain\Model\Category {
         mapping {
             tableName = sys_category

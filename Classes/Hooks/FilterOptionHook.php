@@ -15,7 +15,7 @@ use TYPO3\CMS\Core\Category\CategoryRegistry;
 use TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Frontend\Category\Collection\CategoryCollection;
 
-class FilterOptionHook
+class FilterOptionHook extends AbstractHook
 {
 
     /**
@@ -23,11 +23,6 @@ class FilterOptionHook
      * @inject
      */
     protected $filterRepository;
-
-    /**
-     * @var \TYPO3\CMS\Core\Category\Collection\CategoryCollection
-     */
-    protected $categoryRepository;
 
     /**
      * @param array $filters
@@ -38,6 +33,7 @@ class FilterOptionHook
         if (!empty($filters)) {
             foreach ($filters as $key => $filter) {
                 if ($categories = $this->getCategoriesByFilter($filter['uid'])) {
+                    unset($filters[$key]['options']);
                     /* @var $category \Pws\KesearchCategories\Domain\Model\Category */
                     foreach ($categories as $category) {
                         $filters[$key]['options'] = $this->getFilterOptionByCategory($category);
@@ -71,7 +67,7 @@ class FilterOptionHook
     protected function getCategoriesByFilter($filterUid)
     {
         /* @var $filterObject \Pws\KesearchCategories\Domain\Model\Filter */
-        if (($filterObject = $this->filterRepository->findByUid($filterUid))
+        if (($filterObject = $this->getFilterRepository()->findByUid($filterUid))
             && $filterObject->isUseCategoriesForFilterOptions()
             && ($categories = $filterObject->getCategories())
         ) {
@@ -80,4 +76,19 @@ class FilterOptionHook
 
         return false;
     }
+
+    /**
+     * Inject won't work in hooks, therefore need to use getter method
+     *
+     * @return FilterRepository
+     */
+    public function getFilterRepository()
+    {
+        if (is_null($this->filterRepository)) {
+            $this->filterRepository = $this->getObjectManager()->get('Pws\\KesearchCategories\\Domain\\Repository\\FilterRepository');
+        }
+
+        return $this->filterRepository;
+    }
+
 }
