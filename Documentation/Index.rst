@@ -51,9 +51,9 @@ EXT: Categories for ke_search
 **Table of Contents**
 
 .. toctree::
-:maxdepth: 5
-        :titlesonly:
-        :glob:
+    :maxdepth: 5
+    :titlesonly:
+    :glob:
 
-        Screenshots/Index
-        Issues/Index
+    Screenshots/Index
+    Issues/Index
