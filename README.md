@@ -9,4 +9,4 @@ Categories are used as ``EXT:ke_search`` - indexable tags for pages and news.
 ## TYPO3 compatibility
 
 * TYPO3 6.2 LTS
-* TYPO3 7.0 - 7.5
+* TYPO3 7.4
