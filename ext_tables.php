@@ -8,7 +8,7 @@ if (!defined('TYPO3_MODE')) {
 $tempColumns = array(
     'use_categories_for_filter_options' => array(
         'exclude' => 1,
-        'label' => 'use_categories_for_filter_options',
+        'label' => 'LLL:EXT:kesearch_categories/Resources/Private/Language/locallang_db.xlf:tx_kesearch_filters.use_categories_for_filter_options',
         'config' => array(
             'type' => 'check',
         )
@@ -17,7 +17,7 @@ $tempColumns = array(
         'exclude' => 1,
         'l10n_mode' => 'mergeIfNotBlank',
         'displayCond' => 'FIELD:use_categories_for_filter_options:=:1',
-        'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.categories',
+        'label' => 'LLL:EXT:kesearch_categories/Resources/Private/Language/locallang_db.xlf:tx_kesearch_filters.categories',
         'config' => array(
             'type' => 'select',
             'renderMode' => 'tree',
@@ -48,7 +48,7 @@ $tempColumns = array(
     'use_subcategories' => array(
         'exclude' => 1,
         'displayCond' => 'FIELD:use_categories_for_filter_options:=:1',
-        'label' => 'use_subcategories',
+        'label' => 'LLL:EXT:kesearch_categories/Resources/Private/Language/locallang_db.xlf:tx_kesearch_filters.use_subcategories',
         'config' => array(
             'type' => 'check',
         )
