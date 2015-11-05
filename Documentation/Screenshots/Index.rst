@@ -22,4 +22,7 @@ Add ke_search filter
 
 |add-filter|
 
-Add new ke_search filter by using categories.
+There is no need to add filter options for ke_search filters.
+Easily activate option "use_categories_for_filter_options" and you are able to choose categories to display as filter options.
+
+The page indexer will automaticcly add related TYPO3 categories as tags.
