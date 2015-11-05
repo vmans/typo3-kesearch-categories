@@ -11,6 +11,7 @@ namespace Pws\KesearchCategories\ViewHelpers\Link;
 
 use Pws\KesearchCategories\Domain\Model\Category;
 use Pws\KesearchCategories\Domain\Model\Filter;
+use Pws\KesearchCategories\Domain\Repository\CategoryRepository;
 use Pws\KesearchCategories\Domain\Repository\FilterRepository;
 use TYPO3\CMS\Fluid\ViewHelpers\Link\PageViewHelper;
 
@@ -27,6 +28,12 @@ class CategorySearchLinkViewHelper extends PageViewHelper
      * @inject
      */
     protected $filterRepository;
+
+    /**
+     * @var \Pws\KesearchCategories\Domain\Repository\CategoryRepository
+     * @inject
+     */
+    protected $categoryRepository;
 
     /**
      * @param null $pageUid
@@ -55,12 +62,14 @@ class CategorySearchLinkViewHelper extends PageViewHelper
         $addQueryString = false,
         array $argumentsToBeExcludedFromQueryString = array(),
         $addQueryStringMethod = null,
-        Category $category = null
+        $category = null
     ) {
 
         $this->additionalParams = $additionalParams;
         /* @var $filter \Pws\KesearchCategories\Domain\Model\Filter */
-        if ($category && ($filter = $this->filterRepository->findOneByCategory($category))) {
+        if (($category instanceof Category || (is_numeric($category) && $category = $this->categoryRepository->findByUid($category)))
+            && ($filter = $this->filterRepository->findOneByCategory($category))
+        ) {
             $this->additionalParams['tx_kesearch_pi1']['filter'] = $this->setUpFilterQuery($category, $filter);
         }
 

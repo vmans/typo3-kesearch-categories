@@ -32,7 +32,7 @@ class CategorySearchLinkViewHelperTest extends ViewHelperBaseTestcase
     /**
      *
      */
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
 
