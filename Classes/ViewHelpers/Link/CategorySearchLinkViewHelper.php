@@ -76,7 +76,6 @@ class CategorySearchLinkViewHelper extends PageViewHelper
      */
     protected function setUpFilterQuery(Category $category, Filter $filter)
     {
-        var_dump($filter->isMultiSelectFilter());
         if ($filter->isMultiSelectFilter()) {
             $param = array($category->getUid() => $category->getFilterOptionTag());
         } else {
