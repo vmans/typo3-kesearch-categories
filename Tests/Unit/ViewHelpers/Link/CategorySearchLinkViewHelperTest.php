@@ -42,7 +42,7 @@ class CategorySearchLinkViewHelperTest extends ViewHelperBaseTestcase
         );
         $this->filterRepository = $this->getMock(
             'Pws\KesearchCategories\Domain\Repository\FilterRepository',
-            array('findOneByCategory'),
+            array('findOneByCategories'),
             array(),
             '',
             false
@@ -70,7 +70,7 @@ class CategorySearchLinkViewHelperTest extends ViewHelperBaseTestcase
         $filterMock->method('isMultiSelectFilter')->willReturn($type);
 
         $this->filterRepository->expects($this->once())
-            ->method('findOneByCategory')
+            ->method('findOneByCategories')
             ->with($categoryMock)
             ->willReturn($filterMock);
 
