@@ -27,6 +27,11 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class Filter extends AbstractDomainObject
 {
 
+    const TYPE_SELECT = 'select';
+    const TYPE_LIST = 'list';
+    const TYPE_CHECKBOX = 'checkbox';
+    const TYPE_TEXTLINKS = 'textlinks';
+
     /**
      * @var boolean
      */
@@ -41,6 +46,11 @@ class Filter extends AbstractDomainObject
      * @var boolean
      */
     protected $useSubcategories;
+
+    /**
+     * @var string
+     */
+    protected $rendertype;
 
     /**
      * Filter constructor.
@@ -115,5 +125,28 @@ class Filter extends AbstractDomainObject
         $this->useSubcategories = $useSubcategories;
     }
 
+    /**
+     * @return string
+     */
+    public function getRendertype()
+    {
+        return $this->rendertype;
+    }
+
+    /**
+     * @param string $rendertype
+     */
+    public function setRendertype($rendertype)
+    {
+        $this->rendertype = $rendertype;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isMultiSelectFilter()
+    {
+        return (self::TYPE_CHECKBOX == $this->getRendertype() || self::TYPE_TEXTLINKS == $this->getRendertype());
+    }
 
 }

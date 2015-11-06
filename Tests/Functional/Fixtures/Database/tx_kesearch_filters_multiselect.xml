@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+    <tx_kesearch_filters>
+        <uid>1</uid>
+        <pid>1</pid>
+        <categories>1</categories>
+        <rendertype>textlinks</rendertype>
+    </tx_kesearch_filters>
+</dataset>

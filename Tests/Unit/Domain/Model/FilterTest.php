@@ -30,6 +30,24 @@ class FilterTest extends UnitTestCase
     }
 
     /**
+     * @test
+     */
+    public function testIsMultiSelectFilterMethod()
+    {
+        $this->fixture->setRendertype(Filter::TYPE_SELECT);
+        $this->assertFalse($this->fixture->isMultiSelectFilter());
+
+        $this->fixture->setRendertype(Filter::TYPE_LIST);
+        $this->assertFalse($this->fixture->isMultiSelectFilter());
+
+        $this->fixture->setRendertype(Filter::TYPE_CHECKBOX);
+        $this->assertTrue($this->fixture->isMultiSelectFilter());
+
+        $this->fixture->setRendertype(Filter::TYPE_TEXTLINKS);
+        $this->assertTrue($this->fixture->isMultiSelectFilter());
+    }
+
+    /**
      *
      */
     protected function setUp()
