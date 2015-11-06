@@ -2,6 +2,7 @@
   "name": "kpurrmann/typo3-kesearch-categories",
   "type": "typo3-cms-extension",
   "description": "Extension provides connection between ke_search and TYPO3 categories.",
+  "version": "1.1.0",
   "keywords": [
     "TYPO3",
     "extension",
@@ -59,7 +60,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "1.0.x-dev"
+      "dev-master": "1.1.x-dev"
     },
     "typo3/cms": {
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
