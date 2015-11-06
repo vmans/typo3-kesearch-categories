@@ -15,12 +15,13 @@
 namespace Pws\KesearchCategories\Hooks;
 
 
+use Pws\KesearchCategories\Domain\Model\CategoryAwareInterface;
 use Pws\KesearchCategories\Domain\Model\FilterOptionsInterface;
 use Pws\KesearchCategories\Domain\Model\Page;
 use Pws\KesearchCategories\Domain\Repository\PageRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class IndexPagesHook extends AbstractHook
+class IndexPagesHook extends AbstractIndexHook
 {
 
     /**
@@ -28,16 +29,6 @@ class IndexPagesHook extends AbstractHook
      * @inject
      */
     protected $pageRepository;
-
-    /**
-     * @var array
-     */
-    protected $tags;
-
-    /**
-     * @var array
-     */
-    protected $keSearchExtensionConfig;
 
     /**
      * IndexPagesHook constructor.
@@ -67,11 +58,8 @@ class IndexPagesHook extends AbstractHook
         $indexerConfig = array(),
         $defaultValues = array()
     ) {
-
-        $this->tags = GeneralUtility::trimExplode(',', $tags, true);
-
-        $page = $this->findPageRecord($pageUid);
-        if (($categories = $this->getCategoriesByPage($page))) {
+        if (($page = $this->getCurrentRecord($pageUid)) && ($categories = $this->getTagsOfRecord($page))) {
+            $this->tags = GeneralUtility::trimExplode(',', $tags, true);
             $this->injectKeSearchExtensionConfig();
             foreach ($categories as $category) {
                 $this->addTag($category);
@@ -82,40 +70,13 @@ class IndexPagesHook extends AbstractHook
     }
 
     /**
-     * @param FilterOptionsInterface $option
+     * @param int $uid
+     * @return CategoryAwareInterface
      */
-    protected function addTag(FilterOptionsInterface $option)
+    protected function getCurrentRecord($uid)
     {
-        array_push(
-            $this->tags,
-            $this->keSearchExtensionConfig['prePostTagChar'] . $option->getFilterOptionTag() . $this->keSearchExtensionConfig['prePostTagChar']
-        );
+        return $this->pageRepository->findByUid($uid);
     }
 
 
-    /**
-     * @param Page $page
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
-     */
-    protected function getCategoriesByPage(Page $page)
-    {
-        return $page->getCategories();
-    }
-
-    /**
-     * @param $pageUid
-     * @return Page
-     */
-    protected function findPageRecord($pageUid)
-    {
-        return $this->pageRepository->findByUid($pageUid);
-    }
-
-    /**
-     * Injects ke_search extension config
-     */
-    protected function injectKeSearchExtensionConfig()
-    {
-        $this->keSearchExtensionConfig = \tx_kesearch_helper::getExtConf();
-    }
 }

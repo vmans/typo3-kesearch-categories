@@ -16,4 +16,12 @@
         <sorting>0</sorting>
         <sorting_foreign>2</sorting_foreign>
     </sys_category_record_mm>
+    <sys_category_record_mm>
+        <uid_local>1</uid_local>
+        <uid_foreign>1</uid_foreign>
+        <tablenames>tt_content</tablenames>
+        <fieldname>categories</fieldname>
+        <sorting>0</sorting>
+        <sorting_foreign>1</sorting_foreign>
+    </sys_category_record_mm>
 </dataset>
