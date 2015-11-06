@@ -74,8 +74,10 @@ class IndexCategoriesTest extends FunctionalTestCase
 
         $row = $this->getDatabaseConnection()->exec_SELECTgetSingleRow(
             'tags',
-            'tx_kesearch_index', 'type="tt_content"');
+            'tx_kesearch_index', 'type="content"');
 
         $this->assertEquals('#1firstcategory#', $row['tags']);
+
     }
+
 }
