@@ -68,7 +68,7 @@ class CategorySearchLinkViewHelper extends PageViewHelper
         $this->additionalParams = $additionalParams;
         /* @var $filter \Pws\KesearchCategories\Domain\Model\Filter */
         if (($category instanceof Category || (is_numeric($category) && $category = $this->categoryRepository->findByUid($category)))
-            && ($filter = $this->filterRepository->findOneByCategory($category))
+            && ($filter = $this->filterRepository->findOneByCategories($category))
         ) {
             $this->additionalParams['tx_kesearch_pi1']['filter'] = $this->setUpFilterQuery($category, $filter);
         }
