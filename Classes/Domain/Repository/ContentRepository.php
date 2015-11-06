@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -12,14 +13,14 @@
  * The TYPO3 project - inspiring people to share!
  */
 
-namespace Pws\KesearchCategories\Domain\Model;
+namespace Pws\KesearchCategories\Domain\Repository;
 
 
 /**
- * Class maps table pages
- *
- * @package Pws\KesearchCategories\Domain\Model
+ * Class ContentRepository
+ * @package Pws\KesearchCategories\Domain\Repository
  */
-class Page extends AbstractCategoryEntity
+class ContentRepository extends AbstractDisrespectStoragePageRepository
 {
+
 }

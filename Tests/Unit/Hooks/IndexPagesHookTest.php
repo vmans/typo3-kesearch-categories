@@ -33,8 +33,8 @@ class IndexPagesHookTest extends UnitTestCase
         $page = new Page();
         $tags = 'tag1';
         $content = 'content';
-        $this->fixture->expects($this->once())->method('findPageRecord')->with(1)->willReturn($page);
-        $this->fixture->expects($this->once())->method('getCategoriesByPage')->with($page)->willReturn($objectStorage);
+        $this->fixture->expects($this->once())->method('getCurrentRecord')->with(1)->willReturn($page);
+        $this->fixture->expects($this->once())->method('getTagsOfRecord')->with($page)->willReturn($objectStorage);
         $this->fixture->modifyPagesIndexEntry(1, $content, $tags);
         $this->assertEquals('tag1,onetitle,secondtitle', $tags);
     }
@@ -68,7 +68,7 @@ class IndexPagesHookTest extends UnitTestCase
     {
         $this->fixture = $this->getMock(
             'Pws\KesearchCategories\Hooks\IndexPagesHook',
-            array('findPageRecord', 'getCategoriesByPage', 'injectKeSearchExtensionConfig'),
+            array('getCurrentRecord', 'getTagsOfRecord', 'injectKeSearchExtensionConfig'),
             array(),
             '',
             false

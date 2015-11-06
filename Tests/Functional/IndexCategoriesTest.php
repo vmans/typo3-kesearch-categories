@@ -11,7 +11,7 @@ namespace Pws\KesearchCategories\Tests\Functional;
 
 use TYPO3\CMS\Core\Tests\FunctionalTestCase;
 
-class IndexCategoriesByPagesTest extends FunctionalTestCase
+class IndexCategoriesTest extends FunctionalTestCase
 {
 
     /**
@@ -49,7 +49,7 @@ class IndexCategoriesByPagesTest extends FunctionalTestCase
     /**
      * @test
      */
-    public function testTagsAreSet()
+    public function testTagsAreSetForPages()
     {
         $this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ke_search']);
         $indexer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_kesearch_indexer');
@@ -62,4 +62,22 @@ class IndexCategoriesByPagesTest extends FunctionalTestCase
         $this->assertEquals('#2secondcategory#,#1firstcategory#', $row['tags']);
 
     }
+
+    /**
+     * @test
+     */
+    public function testTagsAreSetForContent()
+    {
+        $this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ke_search']);
+        $indexer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_kesearch_indexer');
+        $indexer->startIndexing(true, $this->extConf);
+
+        $row = $this->getDatabaseConnection()->exec_SELECTgetSingleRow(
+            'tags',
+            'tx_kesearch_index', 'type="content"');
+
+        $this->assertEquals('#1firstcategory#', $row['tags']);
+
+    }
+
 }

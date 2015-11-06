@@ -16,10 +16,11 @@ namespace Pws\KesearchCategories\Domain\Model;
 
 
 /**
- * Class maps table pages
+ * Class Content
  *
  * @package Pws\KesearchCategories\Domain\Model
  */
-class Page extends AbstractCategoryEntity
+class Content extends AbstractCategoryEntity
 {
+
 }
