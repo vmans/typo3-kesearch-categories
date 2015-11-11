@@ -21,6 +21,7 @@ $tempColumns = array(
         'config' => array(
             'type' => 'select',
             'renderMode' => 'tree',
+            'renderType' => 'selectTree',
             'treeConfig' => array(
                 'parentField' => 'parent',
                 'appearance' => array(
