@@ -65,6 +65,8 @@ class IndexPagesHook extends AbstractIndexHook
                 $this->addTag($category);
             }
             $tags = implode(',', $this->tags);
+            $addtionalFields['sortdate'] = 1;
+            $addtionalFields['orig_pid'] = (int) $addtionalFields['orig_pid'];
         }
 
     }
