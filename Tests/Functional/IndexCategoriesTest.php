@@ -59,7 +59,7 @@ class IndexCategoriesTest extends FunctionalTestCase
             'tags',
             'tx_kesearch_index', 'type="page"');
 
-        $this->assertEquals('#2secondcategory#,#1firstcategory#', $row['tags']);
+        $this->assertRegExp('/#2secondcategory#,#1firstcategory#/', $row['tags']);
 
     }
 
@@ -76,7 +76,7 @@ class IndexCategoriesTest extends FunctionalTestCase
             'tags',
             'tx_kesearch_index', 'type="content"');
 
-        $this->assertEquals('#1firstcategory#', $row['tags']);
+        $this->assertRegExp('/#1firstcategory#/', $row['tags']);
 
     }
 
