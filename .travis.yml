@@ -38,7 +38,7 @@ before_install:
   - composer --version
 
 before_script:
-  - if [[ "$TYPO3_VERSION" != "~6.2.14" ]]; then composer require typo3/cms="$TYPO3_VERSION" typo3-ter/ke-search="~1.10"; else composer require typo3/cms="$TYPO3_VERSION" typo3-ter/ke-search="~1.10" typo3/cms-composer-installers="1.2.2 as 1.1.4"; fi
+  - if [[ "$TYPO3_VERSION" != "~6.2.14" ]]; then composer require typo3/cms="$TYPO3_VERSION" teaminmedias-pluswerk/ke_search="~1.99"; else composer require typo3/cms="$TYPO3_VERSION" typo3-ter/ke-search="~1.10" typo3/cms-composer-installers="1.2.2 as 1.1.4"; fi
   # Restore composer.json
   - git checkout composer.json
   - export TYPO3_PATH_WEB=$PWD/.Build/Web
