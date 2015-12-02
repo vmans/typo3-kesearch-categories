@@ -56,6 +56,10 @@ class FilterOptionHook extends AbstractHook
                     }
                 }
 
+                if (!isset($filters[$key]['options'])) {
+                    unset($filters[$key]);
+                }
+
             }
         }
 
