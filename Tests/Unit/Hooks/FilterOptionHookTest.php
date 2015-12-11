@@ -44,9 +44,9 @@ class FilterOptionHookTest extends UnitTestCase
     /**
      * @test
      */
-    public function testFilterKeepsUntouchedIfNoCategoryIsFound()
+    public function testFilterIsRemovedIfNoCategoryIsFound()
     {
-        $filters = $expected = array(
+        $filters = array(
             1 => array(
                 'uid' => 2
             )
@@ -54,7 +54,7 @@ class FilterOptionHookTest extends UnitTestCase
 
         $this->fixture->expects($this->once())->method('getCategoriesByFilter')->with(2)->willReturn(false);
         $this->fixture->modifyFilters($filters, $this->getKesearchLib());
-        $this->assertEquals($expected, $filters);
+        $this->assertTrue(empty($filters));
 
     }
 
