@@ -1,5 +1,5 @@
 {
-  "name": "kpurrmann/typo3-kesearch-categories",
+  "name": "vmans/typo3-kesearch-categories",
   "type": "typo3-cms-extension",
   "description": "Extension provides connection between ke_search and TYPO3 categories.",
   "version": "1.1.2",
