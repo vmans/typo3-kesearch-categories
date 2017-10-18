@@ -36,6 +36,7 @@
   "replace": {
     "kesearch_categories": "self.version",
     "typo3_kesearch_categories": "self.version",
+    "vmans/typo3_kesearch_categories": "self.version"
   },
   "config": {
     "vendor-dir": ".Build/vendor",
