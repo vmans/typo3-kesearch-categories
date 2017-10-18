@@ -28,23 +28,6 @@
   "require": {
     "typo3/cms-core": "~6.2.14|>=7.4.0,<9.0.0"
   },
-  "require-dev": {
-    "namelesscoder/typo3-repository-client": "1.1.x-dev",
-    "mikey179/vfsStream": "1.4.*@dev",
-    "phpunit/phpunit": "~4.7.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Pws\\KesearchCategories\\": "Classes/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Pws\\KesearchCategories\\Tests\\": "Tests",
-      "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
-      "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
-    }
-  },
   "replace": {
     "kesearch_categories": "self.version"
   },
