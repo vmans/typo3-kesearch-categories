@@ -28,8 +28,14 @@
   "require": {
     "typo3/cms-core": "~6.2.14|>=7.4.0,<9.0.0"
   },
+    "autoload": {
+        "psr-4": {
+            "Vmans\\Typo3KesearchCategories\\": "Classes/"
+        }
+    },
   "replace": {
-    "kesearch_categories": "self.version"
+    "kesearch_categories": "self.version",
+    "typo3_kesearch_categories": "self.version",
   },
   "config": {
     "vendor-dir": ".Build/vendor",
